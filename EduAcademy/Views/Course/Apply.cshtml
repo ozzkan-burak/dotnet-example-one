@@ -34,18 +34,18 @@
   <fieldset>
     <legend>Bir Kurs Seçiniz</legend>
     <p>
-      <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core MVC" />
+      <input id="mvc" type="radio" asp-for="SelectedCourse" value="ASP.NET Core MVC" />
       <label>ASP.NET Core MVC</label>
     </p>
     <p>
-      <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core API" />
+      <input id="mvc" type="radio" asp-for="SelectedCourse" value="ASP.NET Core API" />
       <label>ASP.NET Core API</label>
     </p>
     <p>
-      <input id="mvc" type="radio" name="SelectedCourse" value="Blazor" />
+      <input id="mvc" type="radio" asp-for="SelectedCourse" value="Blazor" />
       <label>Blazor</label>
     </p>
   </fieldset>
   <button class="btn btn-primary" type="submit">Başvur</button>
-  <a href="/" class="btn btn-warning">Ana Sayfa</a>
+  <a asp-controlller="Home" asp-action="Index" class="btn btn-warning">Ana Sayfa</a>
 </form>

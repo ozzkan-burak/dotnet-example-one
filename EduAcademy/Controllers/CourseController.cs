@@ -18,7 +18,8 @@ namespace EduAcademy.Controllers
     [ValidateAntiForgeryToken]
     public IActionResult Apply(Candidates model)
     {
-      return View();
+      Repository.Add(model);
+      return Redirect("/");
     }
   }
 }
