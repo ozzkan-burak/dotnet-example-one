@@ -1,3 +1,4 @@
+using EduAcademy.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduAcademy.Controllers
@@ -10,6 +11,12 @@ namespace EduAcademy.Controllers
     }
 
     public IActionResult Apply()
+    {
+      return View();
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Apply(Candidates model)
     {
       return View();
     }
