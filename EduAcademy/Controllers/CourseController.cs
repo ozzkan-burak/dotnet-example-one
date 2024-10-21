@@ -7,7 +7,8 @@ namespace EduAcademy.Controllers
   {
     public IActionResult Index()
     {
-      return View();
+      var model = Repository.Applications;
+      return View(model);
     }
 
     public IActionResult Apply()
@@ -19,7 +20,7 @@ namespace EduAcademy.Controllers
     public IActionResult Apply(Candidates model)
     {
       Repository.Add(model);
-      return Redirect("/");
+      return View("Feedback", model);
     }
   }
 }
