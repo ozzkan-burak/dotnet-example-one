@@ -19,8 +19,16 @@ namespace EduAcademy.Controllers
     [ValidateAntiForgeryToken]
     public IActionResult Apply(Candidates model)
     {
-      Repository.Add(model);
-      return View("Feedback", model);
+      if(Repository.Applications.Any(c=> c.Email.Equals(model.Email))){
+        ModelState.AddModelError("", "Bir kullanıcı sadece tek bir eğitime başvurabilir.");
+      }
+      if(ModelState.IsValid)
+      {
+        Repository.Add(model);
+        return View("Feedback", model);
+      }
+
+      return View();
     }
   }
 }
